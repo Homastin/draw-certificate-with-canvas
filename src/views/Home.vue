@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <canvas-certificate
+      :canvasId="canvasId"
+      :imageSrc="imageSrc"
+    ></canvas-certificate>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+
+import CanvasCertificate from '@/components/CanvasCertificate';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    CanvasCertificate,
+  },
+  data() {
+    return {
+      canvasId: 'eleCert',
+      imageSrc: require('@/components/CanvasCertificate/bg3.jpg'),
+    }
   },
 };
 </script>
+<style lang="scss">
+  .home {
+   width: 50%;
+  }
+</style>
+
